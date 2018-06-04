@@ -22,7 +22,7 @@ fi
 
 mount -t cifs "$DATAFOLDER" /opt/azurite/folder/ -o username="$SMBUSER",password="$SMBUSERPWD",noexec
 if [[ $? -ne 0 ]]; then
-  echo "SMB mount failed. Maybe you are forgot --privileged parameter?"
+  echo "SMB mount failed. Maybe you are forgot --cap-add=SYS_ADMIN parameter?"
   exit 1
 fi
 
